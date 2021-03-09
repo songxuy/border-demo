@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=`, initial-scale=1.0">
+  <title>border4</title>
+</head>
+<style>
+  div{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: gold;
+    transition: all .3s;
+    cursor: pointer;
+  }
+  div::before, div::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    animation: clippath 3s infinite linear;
+  }
+  div::after {
+      animation: clippath 3s infinite -1.5s linear;
+  }
+  @keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}
+</style>
+<body>
+  <div></div>
+</body>
+</html>

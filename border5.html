@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border5</title>
+</head>
+<style>
+  div{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+    overflow: hidden;
+  }
+  div::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+    line-height: 92px;
+    font-size: 24px;
+    background:  yellowgreen;
+    border: 2px solid #fff;
+    cursor: pointer;
+    color: yellowgreen;
+    }
+    
+    div::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: -20px;
+        left: 0px;
+        background: yellowgreen;
+        transform: rotateZ(-90deg) translate(-100%, -100%);
+        transform-origin: top left;
+        transition: transform .3s;
+        transition-timing-function: linear;
+    }
+    
+    div:hover::before {
+        transform: rotateZ(0deg) translate(0%, -0%);
+    }
+</style>
+<body>
+  <div></div>
+</body>
+</html>
